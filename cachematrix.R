@@ -8,14 +8,14 @@
 ## makeCacheMatrix is a function that creates a special "matrix" 
 ## object that can cache its inverse. 
 makeCacheMatrix <- function(x = matrix()) {
-  m <- NULL
+  inv <- NULL
   set <- function(y) {
     x <<- y   #special operator is used here
-    m <<- NULL # m is still NULL
+    inv <<- NULL # inv is still NULL
   }
   get <- function() x
-  setmean <- function(inverse) m <<- inverse  ## results of an inverse
-  getmean <- function() m
+  setmean <- function(inverse) inv <<- inverse  ## results of an inverse
+  getmean <- function() inv
   list(set = set, get = get,
        setmean = setmean,
        getmean = getmean)  # returns a list
